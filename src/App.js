@@ -5,6 +5,7 @@ import { Create } from './Create';
 import { Traverse } from './Traverse';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Menu } from './Menu';
+import { Edit } from './Edit';
 
 const App=()=>{
   return(
@@ -15,6 +16,7 @@ const App=()=>{
           {/* <Route path="/" exact element={()=><Traverse/>} /> */}
           <Route path="show" element={<Traverse/>} />
           <Route path="new" element={<Create/>} />
+          <Route path="modify/:reg" exact element={<Edit/>} />
         </Routes>
       </BrowserRouter>
     </>
