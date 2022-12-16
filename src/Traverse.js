@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { onTraverse } from "./Connect"
+import { onDelete, onTraverse } from "./Connect"
 
 export const Traverse=(props)=>{
 
@@ -41,9 +41,17 @@ export const Traverse=(props)=>{
                                     mylist.map((each)=>(
                                         <tr>
                                             <td>
-                                                <a href={`/modify/${each.regno}`}>
-                                                <i class="bi bi-pencil-fill"></i>{each.regno}
+                                                <a href={`/modify/${each.regno}`} className="text-warning">
+                                                <span class="bi bi-pencil-fill"></span>
                                                 </a>
+                                                {each.regno}
+                                                <button className="ms-2 btn btn-outline-danger" onClick={async()=>{
+                                                    const ttt = await onDelete(each.regno)
+                                                    alert(ttt.data)
+                                                    window.location.assign("/")
+                                                }}>
+                                                <span class="bi bi-trash3-fill"></span>
+                                                </button>
                                             </td>
                                             <td>{each.model}</td>
                                             <td>{each.brand}</td>
