@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { onTraverse } from "./Connect"
 
-export const Traverse=()=>{
+export const Traverse=(props)=>{
 
     const[mylist,setMylist]=useState([])
 
@@ -11,7 +11,12 @@ export const Traverse=()=>{
     }
 
     useEffect(()=>{
-        loads()
+        if(props.myown){
+            setMylist(props.myown)
+        }
+        else{
+            loads()
+        }
     },[])
 
     return(

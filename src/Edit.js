@@ -48,6 +48,19 @@ export const Edit=()=>{
         window.location.assign("/")
     }
 
+    const cancel=()=>{
+        setBike(()=>{
+            return{
+                "regno":"",
+                "model":"",
+                "brand":"",
+                "year":0,
+                "cc":0.0,
+                "price":0
+            }
+        })
+    }
+
     return(
         <>
             <div className="mt-4 row justify-content-center">
@@ -87,7 +100,7 @@ export const Edit=()=>{
                         <button className="col-2 btn btn-outline-success" onClick={pushing}>
                             <i class="bi bi-cloud-upload-fill"></i>
                         </button>
-                        <button className="col-2 btn btn-outline-dark" type="reset">
+                        <button className="col-2 btn btn-outline-dark" onClick={cancel}>
                             <i class="bi bi-x-square-fill"></i>
                         </button>
                     </div>

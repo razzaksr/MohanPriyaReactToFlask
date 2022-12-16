@@ -36,6 +36,19 @@ export const Create=()=>{
         alert(JSON.stringify(t.data))
     }
 
+    const cancel=()=>{
+        setBike(()=>{
+            return{
+                "regno":"",
+                "model":"",
+                "brand":"",
+                "year":0,
+                "cc":0.0,
+                "price":0
+            }
+        })
+    }
+
     return(
         <>
             <div className="mt-4 row justify-content-center">
@@ -75,7 +88,7 @@ export const Create=()=>{
                         <button className="col-2 btn btn-outline-success" onClick={pushing}>
                             <i class="bi bi-node-plus-fill"></i>
                         </button>
-                        <button className="col-2 btn btn-outline-dark" type="reset">
+                        <button className="col-2 btn btn-outline-dark" onClick={cancel}>
                             <i class="bi bi-x-square-fill"></i>
                         </button>
                     </div>

@@ -6,6 +6,7 @@ import { Traverse } from './Traverse';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Menu } from './Menu';
 import { Edit } from './Edit';
+import { Filter } from './Filter';
 
 const App=()=>{
   return(
@@ -17,6 +18,7 @@ const App=()=>{
           <Route path="show" element={<Traverse/>} />
           <Route path="new" element={<Create/>} />
           <Route path="modify/:reg" exact element={<Edit/>} />
+          <Route path="filter" exact element={<Filter/>} />
         </Routes>
       </BrowserRouter>
     </>

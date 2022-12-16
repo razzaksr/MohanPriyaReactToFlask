@@ -13,6 +13,7 @@ export const Menu=()=>{
                         <Nav className="ms-auto">
                             <Nav.Link href="/show">View</Nav.Link>
                             <Nav.Link href="/new">New</Nav.Link>
+                            <Nav.Link href="/filter">Shortlist</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
