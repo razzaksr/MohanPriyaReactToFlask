@@ -7,20 +7,31 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Menu } from './Menu';
 import { Edit } from './Edit';
 import { Filter } from './Filter';
+import { Login } from './Login';
 
 const App=()=>{
   return(
     <>
-      <BrowserRouter>
-        <Menu/>
-        <Routes>
-          {/* <Route path="/" exact element={()=><Traverse/>} /> */}
-          <Route path="show" element={<Traverse/>} />
-          <Route path="new" element={<Create/>} />
-          <Route path="modify/:reg" exact element={<Edit/>} />
-          <Route path="filter" exact element={<Filter/>} />
-        </Routes>
-      </BrowserRouter>
+      {
+        (sessionStorage.getItem("person"))
+        ?
+        <>
+          <BrowserRouter>
+            <Menu/>
+            <Routes>
+              {/* <Route path="/" exact element={()=><Traverse/>} /> */}
+              <Route path="show" element={<Traverse/>} />
+              <Route path="new" element={<Create/>} />
+              <Route path="modify/:reg" exact element={<Edit/>} />
+              <Route path="filter" exact element={<Filter/>} />
+            </Routes>
+          </BrowserRouter>
+        </>
+        :
+        <>
+          <Login/>
+        </>
+      }
     </>
   )
 }

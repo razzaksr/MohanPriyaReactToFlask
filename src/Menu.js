@@ -11,9 +11,15 @@ export const Menu=()=>{
                     <Navbar.Toggle aria-controls="mohan" />
                     <Navbar.Collapse id="mohan">
                         <Nav className="ms-auto">
-                            <Nav.Link href="/show">View</Nav.Link>
-                            <Nav.Link href="/new">New</Nav.Link>
-                            <Nav.Link href="/filter">Shortlist</Nav.Link>
+                            <a className="me-2 btn btn-outline-success" href="/show">View</a>
+                            <a className="me-2 btn btn-outline-success" href="/new">New</a>
+                            <a className="me-2 btn btn-outline-success" href="/filter">Shortlist</a>
+                            <button className="me-2 btn btn-outline-danger" onClick={()=>{
+                                sessionStorage.removeItem("person")
+                                window.location.assign("/")
+                            }}>
+                                <i class="bi bi-door-open-fill"></i>
+                            </button>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
